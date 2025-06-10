@@ -1,0 +1,17 @@
+interface;
+
+define behavior for Z_I_HEADER1_4355 alias Header
+{
+  use create;
+  use update;
+  use delete;
+
+  use association _items { create; }
+}
+
+define behavior for Z_I_ITEM2_4355 alias Items
+{
+  use update;
+  use delete;
+  use association _header;
+}

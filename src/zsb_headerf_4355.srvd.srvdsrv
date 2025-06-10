@@ -1,0 +1,5 @@
+@EndUserText.label: 'SERVICE DEFINITION'
+define service ZSB_HEADERF_4355 {
+  expose Z_C_HEADER2_4355;
+  expose Z_C_ITEM2_4355;
+}

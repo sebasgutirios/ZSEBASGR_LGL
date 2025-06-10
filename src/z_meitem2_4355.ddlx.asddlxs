@@ -1,0 +1,75 @@
+@Metadata.layer: #CORE
+@UI.headerInfo: {
+    typeName: 'Item',
+    typeNamePlural: 'Items',
+    typeImageUrl: '',
+    title: {
+        type: #STANDARD,
+        value: 'Description'
+    },
+    description: {
+        type: #STANDARD,
+        value: 'Description'
+    }
+}
+
+@Search.searchable: true
+annotate entity Z_C_ITEM2_4355
+    with 
+{
+    @UI: {
+      facet : [
+               { id: 'IdHeader',
+                 label : 'Detalles del Libro',
+                 type: #IDENTIFICATION_REFERENCE,
+                 position: 10}]
+  }
+//    @UI: { lineItem: [{ position: 10,
+//                      importance: #HIGH }],identification: [{ position: 10 }]}
+  IdHeader;
+  
+  @UI: { lineItem: [{ position: 20,
+                      importance: #HIGH }],identification: [{ position: 20 }]}
+  IdItem;
+  
+  @Search.defaultSearchElement: true
+  @Search.fuzzinessThreshold: 0.9
+  @Search.ranking: #HIGH
+  //con selectionField se crea filtro o busqueda
+  @UI: { selectionField: [{ position: 40 }]} 
+  @UI: { lineItem: [{ position: 30,
+                      importance: #HIGH }],identification: [{ position: 30 }]}
+  Name;
+  
+  @UI: { lineItem: [{ position: 40,
+                      importance: #HIGH }],identification: [{ position: 40 }]}
+  Description;
+  //con Consumption.valueHelpDefinition se crea una ayuda de busqueda con valores
+    @UI: { lineItem: [{ position: 50,
+                      importance: #HIGH }],identification: [{ position: 50 }]}
+  ReleaseDate;
+  @UI: { lineItem: [{ position: 60,
+                     importance: #HIGH }],identification: [{ position: 60 }]}
+  DiscontinuedDate;
+  @UI: { lineItem: [{ position: 70,
+                      importance: #HIGH }],identification: [{ position: 70 }]}
+  Price;
+  @UI: { lineItem: [{ position: 80,
+                      importance: #HIGH }],identification: [{ position: 80 }]}
+  Height;
+  @UI: { lineItem: [{ position: 90,
+                      importance: #HIGH }],identification: [{ position: 90 }]}
+  Width;
+  
+  @UI: { lineItem: [{ position: 95,
+                      importance: #HIGH }],identification: [{ position: 95 }]}
+  Depth;
+  
+  @UI: { lineItem: [{ position: 100,
+                      importance: #HIGH }],identification: [{ position: 100 }]}
+  Quantity;
+  @UI: { lineItem: [{ position: 110,
+                      importance: #HIGH }],identification: [{ position: 110 }]}
+  Unitofmeasure;
+    
+}

@@ -1,0 +1,58 @@
+managed implementation in class zbp_r_header2_4355 unique;
+strict ( 2 );
+
+define behavior for Z_R_HEADER2_4355 //alias <alias_name>
+persistent table zheader2_4355
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  create ( authorization : global );
+  update;
+  delete;
+  field ( mandatory:create , readonly : update ) IdHeader,Email;
+  association _items { create; }
+
+      mapping for zheader2_4355
+    {
+      IdHeader    = id_header;
+      Email        = email;
+      FirstName    = first_name;
+      LastName     = last_name;
+      Country      = country;
+      Createon     = createon;
+      DeliveryDate = delivery_date;
+      OrderStatus  = order_status;
+      ImageUrl     = image_url;
+    }
+}
+
+define behavior for Z_R_ITEM2_4355 //alias <alias_name>
+persistent table zitem2_4355
+lock dependent by _header
+authorization dependent by _header
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( readonly: update ) IdHeader;
+  field ( mandatory:create,readonly : update ) IdItem;
+
+  association _header;
+
+   mapping for zitem2_4355
+    {
+      IdItem           =  id_item;
+      IdHeader         =  id_header;
+      Name             =  name;
+      Description     =  description;
+      ReleaseDate      =  release_date;
+      DiscontinuedDate =  discontinued_date;
+      Price           =  price;
+      Height         =  height;
+      Width=              width;
+      Depth          =    depth;
+      Quantity       =               quantity;
+      Unitofmeasure =               unitofmeasure;
+                  }
+}
