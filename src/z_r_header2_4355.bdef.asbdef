@@ -10,7 +10,8 @@ authorization master ( instance )
   create ( authorization : global );
   update;
   delete;
-  field ( mandatory:create , readonly : update ) IdHeader,Email;
+//  field ( mandatory:create  ) IdHeader;
+  field (mandatory:create, readonly : update ) IdHeader,Email;
   association _items { create; }
 
       mapping for zheader2_4355

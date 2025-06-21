@@ -7,7 +7,7 @@ define view entity Z_C_ITEM2_4355
   as projection on Z_R_ITEM2_4355
 {
 @Search.defaultSearchElement: true
-  @Consumption.valueHelpDefinition: [{ entity:{name: 'Z_R_ITEM2_4355',element: 'IdHeader'} }]
+  @Consumption.valueHelpDefinition: [{ entity:{name: 'Z_R_ITEM2_4355',element: 'IdItem'} }]
   key IdItem,
       IdHeader,
       Name,

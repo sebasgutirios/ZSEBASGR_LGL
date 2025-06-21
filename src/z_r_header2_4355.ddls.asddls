@@ -4,8 +4,8 @@
 define root view entity Z_R_HEADER2_4355
   as select from zheader2_4355 as Header
   composition [0..*] of Z_R_ITEM2_4355                 as _items
-  association [1..1] to /DMO/I_Overall_Status_VH_Text as _Status on  $projection.OrderStatus = _Status.OverallStatus
-                                                                 and _Status.Language        = $session.system_language
+  //association [1..1] to /DMO/I_Overall_Status_VH_Text as _Status on  $projection.OrderStatus = _Status.OverallStatus
+ //                                                                and _Status.Language        = $session.system_language
 {
   key id_header     as IdHeader,
       email         as Email,
@@ -22,6 +22,6 @@ define root view entity Z_R_HEADER2_4355
       else 0
       end           as OrderStatus2,
     image_url     as ImageUrl,
-      _items,
-      _Status // Make association public
+      _items
+      //_Status // Make association public
 }

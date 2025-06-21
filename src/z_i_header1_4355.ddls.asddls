@@ -16,6 +16,6 @@ provider contract transactional_interface
       OrderStatus2,
       ImageUrl,
       /* Associations */
-      _items: redirected to composition child Z_I_ITEM2_4355,
-      _Status
+      _items: redirected to composition child Z_I_ITEM2_4355
+      //_Status
 }

@@ -17,13 +17,13 @@ provider contract transactional_query
       Country,
       Createon,
       DeliveryDate,
-      @ObjectModel.text.element: [ 'StatusText' ]
-        @Consumption.valueHelpDefinition: [{ entity:{name: '/DMO/I_Overall_Status_VH_Text',element: 'OverallStatus'},useForValidation: true }]
+     @ObjectModel.text.element: [ 'OrderStatus' ]
+       @Consumption.valueHelpDefinition: [{ entity:{name: 'Z_R_HEADER2_4355',element: 'OrderStatus'}, useForValidation: true}]
       OrderStatus,
-      _Status._OverallStatus._Text.Text as StatusText : localized,
-      OrderStatus2,
+//      _Status._OverallStatus._Text.Text as StatusText : localized,
+    OrderStatus2,
       ImageUrl,
       /* Associations */
-      _items: redirected to composition child Z_C_ITEM2_4355,
-      _Status
+      _items: redirected to composition child Z_C_ITEM2_4355
+      //_Status
 }

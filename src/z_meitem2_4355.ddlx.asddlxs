@@ -20,7 +20,7 @@ annotate entity Z_C_ITEM2_4355
     @UI: {
       facet : [
                { id: 'IdHeader',
-                 label : 'Detalles del Libro',
+                 label : 'Details Item',
                  type: #IDENTIFICATION_REFERENCE,
                  position: 10}]
   }
@@ -62,14 +62,14 @@ annotate entity Z_C_ITEM2_4355
   Width;
   
   @UI: { lineItem: [{ position: 95,
-                      importance: #HIGH }],identification: [{ position: 95 }]}
+                      importance: #MEDIUM }],identification: [{ position: 95 }]}
   Depth;
   
   @UI: { lineItem: [{ position: 100,
-                      importance: #HIGH }],identification: [{ position: 100 }]}
+                      importance: #MEDIUM }],identification: [{ position: 100 }]}
   Quantity;
   @UI: { lineItem: [{ position: 110,
-                      importance: #HIGH }],identification: [{ position: 110 }]}
+                      importance: #LOW }],identification: [{ position: 110 }]}
   Unitofmeasure;
     
 }

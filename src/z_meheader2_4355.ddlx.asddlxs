@@ -1,7 +1,7 @@
 @Metadata.layer: #CORE
 @UI.headerInfo: {
-    typeName: 'ORDER SALE',
-    typeNamePlural: 'ORDER SALES',
+    typeName: 'SALE ORDER',
+    typeNamePlural: 'SALES ORDERs',
     imageUrl: 'ImageUrl',
     title: {
         type: #STANDARD,
@@ -62,16 +62,17 @@ annotate entity Z_C_HEADER2_4355
   //  @UI: { fieldGroup: [{ qualifier: 'DetallesLibro',
   //                        position: 20}],
   //         selectionField: [{ position: 20 }]}
- @UI: { lineItem: [{ position: 50,
-                      importance: #HIGH }],
-                      identification: [{ position: 50 }]}
+ @UI: { lineItem: [{ position: 80,
+                      importance: #MEDIUM }],
+                      identification: [{ position: 80 }]}
   Country;
   
   @UI: { lineItem: [{ position: 60,
-                     importance: #HIGH }]}
+                     importance: #MEDIUM }],
+                     identification: [{ position: 60 }]}
   Createon;
   @UI: { lineItem: [{ position: 70,
-                     importance: #HIGH }],
+                     importance: #MEDIUM }],
                      identification: [{ position: 70 }]}
   DeliveryDate;
 //  @UI: { lineItem: [{ position: 80,
@@ -81,11 +82,11 @@ annotate entity Z_C_HEADER2_4355
 //  OrderStatus;
   
 
-      @UI: { lineItem: [{ position: 80,
+      @UI: { lineItem: [{ position: 50,
                       label: 'ORDER STATUS',
                       importance: #HIGH,
-                      criticality: 'OrderStatus' }],
-                      identification: [{ position: 80 }],
+                      criticality: 'OrderStatus2' }],
+                      identification: [{ position: 50 }],
          selectionField: [{ position: 50 }],
          textArrangement: #TEXT_ONLY}
   OrderStatus;
@@ -93,10 +94,12 @@ annotate entity Z_C_HEADER2_4355
                       label: 'ORDER STATUS ICON',
                       importance: #HIGH,
                       criticality: 'OrderStatus2' }]}
+                      @UI.hidden: true
   OrderStatus2;
   
   @UI: { lineItem: [{ position: 90,
-                      importance: #HIGH }]}
+                      importance: #LOW }],
+                     identification: [{ position: 90 }]}
   ImageUrl;
     
 }
